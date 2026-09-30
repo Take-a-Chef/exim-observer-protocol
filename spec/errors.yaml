@@ -1,0 +1,27 @@
+errors:
+  - id: 0
+    name: OK
+  - id: 1
+    name: INVALID_FRAME
+  - id: 2
+    name: UNSUPPORTED_VERSION
+  - id: 3
+    name: UNSUPPORTED_MESSAGE
+  - id: 4
+    name: UNSUPPORTED_CAPABILITY
+  - id: 5
+    name: INVALID_REQUEST
+  - id: 6
+    name: INVALID_MESSAGE_ID
+  - id: 7
+    name: INVALID_TRACKING_ID
+  - id: 8
+    name: MESSAGE_NOT_FOUND
+  - id: 9
+    name: MESSAGE_BUSY
+  - id: 10
+    name: PERMISSION_DENIED
+  - id: 11
+    name: INTERNAL_ERROR
+  - id: 12
+    name: TEMPORARY_ERROR

@@ -1,0 +1,32 @@
+{
+  "name": "zero-tag",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 0,
+        "hex": ""
+      },
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 1,
+  "binary_hex": "45584f4200010001000000000000001c000000000000000000000000000100020001000200020001000400080000000000000001"
+}

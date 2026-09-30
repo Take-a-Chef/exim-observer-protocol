@@ -1,0 +1,20 @@
+{
+  "name": "ok-in-error",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 3,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 13,
+        "hex": "0000"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f420001000300000000000000060000000000000000000d00020000"
+}

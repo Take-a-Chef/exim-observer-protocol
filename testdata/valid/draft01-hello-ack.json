@@ -1,0 +1,40 @@
+{
+  "name": "hello-ack",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 2,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 3,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 2,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 3,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f420001000200000000000000120000000000000000000300020001000400080000000000000001"
+}

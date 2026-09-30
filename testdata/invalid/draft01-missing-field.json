@@ -1,0 +1,24 @@
+{
+  "name": "missing-field",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010001000000000000000c0000000000000000000100020001000200020001"
+}

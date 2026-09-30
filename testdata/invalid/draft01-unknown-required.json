@@ -1,0 +1,32 @@
+{
+  "name": "unknown-required",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      },
+      {
+        "id": 32769,
+        "hex": ""
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010001000000000000001c000000000000000000010002000100020002000100040008000000000000000180010000"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "hello",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000004003"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000004003"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f420001000100000000000000180000000000000000000100020001000200020001000400080000000000004003"
+}

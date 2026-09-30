@@ -1,0 +1,20 @@
+name: Development tools
+description: Install explicit pinned developer tools for verification jobs
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+      with:
+        node-version: "24"
+        cache: npm
+    - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+      with:
+        python-version: "3.12"
+    - shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y clang-18 clang-tidy-18 cppcheck yamllint
+        ./scripts/setup-dev.sh
+        mkdir -p .tools/bin
+        ln -sf /usr/bin/clang-18 .tools/bin/clang
+        ln -sf /usr/bin/clang-tidy-18 .tools/bin/clang-tidy

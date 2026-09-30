@@ -1,0 +1,40 @@
+{
+  "name": "queue-count-response",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1026,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "0000000000000007"
+      },
+      {
+        "id": 12,
+        "hex": "0000000000000013"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 1026,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "0000000000000007"
+      },
+      {
+        "id": 12,
+        "hex": "0000000000000013"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f420001040200000000000000180000000000000000000500080000000000000007000c00080000000000000013"
+}

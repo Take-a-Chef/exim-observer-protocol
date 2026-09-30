@@ -1,0 +1,40 @@
+{
+  "name": "unicode-boundaries",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 3,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 13,
+        "hex": "0001"
+      },
+      {
+        "id": 14,
+        "hex": "c280dfbfe0a080ed9fbfee8080f0908080f48fbfbf"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 3,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 13,
+        "hex": "0001"
+      },
+      {
+        "id": 14,
+        "hex": "c280dfbfe0a080ed9fbfee8080f0908080f48fbfbf"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f4200010003000000000000001f0000000000000000000d00020001000e0015c280dfbfe0a080ed9fbfee8080f0908080f48fbfbf"
+}

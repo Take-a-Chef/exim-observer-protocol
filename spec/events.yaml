@@ -1,0 +1,49 @@
+events:
+  - id: 1
+    name: MESSAGE_RECEIVED
+    status: reserved
+  - id: 2
+    name: MESSAGE_ACCEPTED
+    status: implemented
+  - id: 3
+    name: MESSAGE_REJECTED
+    status: reserved
+  - id: 4
+    name: RECIPIENT_ADDED
+    status: reserved
+  - id: 5
+    name: DELIVERY_START
+    status: reserved
+  - id: 6
+    name: DELIVERY_SUCCESS
+    status: reserved
+  - id: 7
+    name: DELIVERY_DEFER
+    status: reserved
+  - id: 8
+    name: DELIVERY_FAIL
+    status: reserved
+  - id: 9
+    name: MESSAGE_COMPLETE
+    status: reserved
+  - id: 10
+    name: MESSAGE_FROZEN
+    status: reserved
+  - id: 11
+    name: MESSAGE_THAWED
+    status: reserved
+  - id: 12
+    name: MESSAGE_REMOVED
+    status: reserved
+  - id: 13
+    name: BOUNCE_RECEIVED
+    status: reserved
+  - id: 14
+    name: DSN_RECEIVED
+    status: reserved
+  - id: 15
+    name: OPEN
+    status: reserved
+  - id: 16
+    name: CLICK
+    status: reserved

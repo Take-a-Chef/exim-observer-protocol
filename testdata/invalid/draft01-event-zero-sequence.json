@@ -1,0 +1,32 @@
+{
+  "name": "event-zero-sequence",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 258,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 6,
+        "hex": "61"
+      },
+      {
+        "id": 8,
+        "hex": "62"
+      },
+      {
+        "id": 10,
+        "hex": "63"
+      },
+      {
+        "id": 11,
+        "hex": "0000000000000000"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010102000000000000001b000000000000000000060001610008000162000a000163000b00080000000000000000"
+}

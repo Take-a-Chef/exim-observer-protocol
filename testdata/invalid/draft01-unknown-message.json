@@ -1,0 +1,15 @@
+{
+  "name": "unknown-message",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 2457,
+    "flags": 0,
+    "sequence": 0,
+    "fields": []
+  },
+  "expected_decoded": null,
+  "expected_error": 3,
+  "binary_hex": "45584f420001099900000000000000000000000000000000"
+}

@@ -1,0 +1,25 @@
+name: Release candidate archive
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    uses: ./.github/workflows/ci.yml
+  archive:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Reproducible source archive
+        run: |
+          git archive --format=tar --prefix=exim-observer-protocol/ HEAD | gzip -n > exim-observer-protocol.tar.gz
+          sha256sum exim-observer-protocol.tar.gz > SHA256SUMS
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: protocol-source-${{ github.sha }}
+          path: |
+            exim-observer-protocol.tar.gz
+            SHA256SUMS
+          if-no-files-found: error

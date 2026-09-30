@@ -1,0 +1,24 @@
+{
+  "name": "forbidden-known-field",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 514,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "0000000000000001"
+      },
+      {
+        "id": 6,
+        "hex": "6d78"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f420001020200000000000000120000000000000000000500080000000000000001000600026d78"
+}

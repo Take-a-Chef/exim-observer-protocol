@@ -1,0 +1,56 @@
+{
+  "name": "optional-extension",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 2,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      },
+      {
+        "id": 100,
+        "hex": "abcd"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 2,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0001"
+      },
+      {
+        "id": 2,
+        "hex": "0001"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      },
+      {
+        "id": 100,
+        "hex": "abcd"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f4200020001000000000000001e000000000000000000010002000100020002000100040008000000000000000100640002abcd"
+}

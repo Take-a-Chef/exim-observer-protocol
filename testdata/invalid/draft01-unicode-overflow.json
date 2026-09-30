@@ -1,0 +1,24 @@
+{
+  "name": "unicode-overflow",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 3,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 13,
+        "hex": "0001"
+      },
+      {
+        "id": 14,
+        "hex": "f4908080"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010003000000000000000e0000000000000000000d00020001000e0004f4908080"
+}

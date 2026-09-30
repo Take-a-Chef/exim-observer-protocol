@@ -1,0 +1,31 @@
+capabilities:
+  - id: 0
+    name: EVENTS
+  - id: 1
+    name: TRACKING
+  - id: 2
+    name: QUEUE_LIST
+  - id: 3
+    name: QUEUE_CONTROL
+  - id: 4
+    name: MESSAGE_HEADERS
+  - id: 5
+    name: MESSAGE_BODY
+  - id: 6
+    name: MESSAGE_LOG
+  - id: 7
+    name: FORCE_DELIVERY
+  - id: 8
+    name: FREEZE
+  - id: 9
+    name: THAW
+  - id: 10
+    name: REMOVE
+  - id: 11
+    name: BOUNCE
+  - id: 12
+    name: DSN
+  - id: 13
+    name: ENGAGEMENT
+  - id: 14
+    name: QUEUE_COUNT

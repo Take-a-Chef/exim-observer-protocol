@@ -53,3 +53,12 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Local tooling and build products
+/build/
+/.tools/
+/node_modules/
+/.idea/
+/.gitconfig-tac
+__pycache__/
+/graphify-out/

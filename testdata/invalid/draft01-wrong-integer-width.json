@@ -1,0 +1,20 @@
+{
+  "name": "wrong-integer-width",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 514,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "01"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010202000000000000000500000000000000000005000101"
+}

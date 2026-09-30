@@ -1,0 +1,40 @@
+{
+  "name": "uint64-maximum",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1026,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "ffffffffffffffff"
+      },
+      {
+        "id": 12,
+        "hex": "ffffffffffffffff"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 1026,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "ffffffffffffffff"
+      },
+      {
+        "id": 12,
+        "hex": "ffffffffffffffff"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f42000104020000000000000018000000000000000000050008ffffffffffffffff000c0008ffffffffffffffff"
+}

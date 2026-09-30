@@ -1,0 +1,32 @@
+{
+  "name": "invalid-identifier",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 258,
+    "flags": 0,
+    "sequence": 1,
+    "fields": [
+      {
+        "id": 6,
+        "hex": "612062"
+      },
+      {
+        "id": 8,
+        "hex": "62"
+      },
+      {
+        "id": 10,
+        "hex": "63"
+      },
+      {
+        "id": 11,
+        "hex": "0000000000000000"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010102000000000000001d0000000000000001000600036120620008000162000a000163000b00080000000000000000"
+}

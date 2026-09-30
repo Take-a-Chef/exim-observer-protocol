@@ -1,0 +1,48 @@
+{
+  "name": "hello-incompatible-range",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0100"
+      },
+      {
+        "id": 2,
+        "hex": "0102"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 1,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 1,
+        "hex": "0100"
+      },
+      {
+        "id": 2,
+        "hex": "0102"
+      },
+      {
+        "id": 4,
+        "hex": "0000000000000001"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f420001000100000000000000180000000000000000000100020100000200020102000400080000000000000001"
+}

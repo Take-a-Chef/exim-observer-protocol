@@ -1,0 +1,3 @@
+# Explicit development setup only; never installed by make test/check.
+PyYAML==6.0.3
+clang-format==18.1.8

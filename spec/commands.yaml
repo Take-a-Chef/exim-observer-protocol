@@ -1,0 +1,34 @@
+commands:
+  - id: 1
+    name: QUEUE_LIST
+    status: reserved
+  - id: 2
+    name: QUEUE_COUNT
+    status: implemented
+  - id: 3
+    name: QUEUE_GET
+    status: reserved
+  - id: 4
+    name: MESSAGE_FREEZE
+    status: reserved
+  - id: 5
+    name: MESSAGE_THAW
+    status: reserved
+  - id: 6
+    name: MESSAGE_REMOVE
+    status: reserved
+  - id: 7
+    name: MESSAGE_RETRY
+    status: reserved
+  - id: 8
+    name: MESSAGE_FORCE_DELIVERY
+    status: reserved
+  - id: 9
+    name: MESSAGE_GET_HEADERS
+    status: reserved
+  - id: 10
+    name: MESSAGE_GET_BODY
+    status: reserved
+  - id: 11
+    name: MESSAGE_GET_LOG
+    status: reserved

@@ -1,0 +1,32 @@
+{
+  "name": "queue-count",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 514,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "0000000000000007"
+      }
+    ]
+  },
+  "expected_decoded": {
+    "major": 0,
+    "minor": 1,
+    "type": 514,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 5,
+        "hex": "0000000000000007"
+      }
+    ]
+  },
+  "expected_error": 0,
+  "binary_hex": "45584f4200010202000000000000000c0000000000000000000500080000000000000007"
+}

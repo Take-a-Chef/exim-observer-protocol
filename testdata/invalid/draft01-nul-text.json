@@ -1,0 +1,24 @@
+{
+  "name": "nul-text",
+  "protocol_version": "0.1",
+  "semantic": {
+    "major": 0,
+    "minor": 1,
+    "type": 3,
+    "flags": 0,
+    "sequence": 0,
+    "fields": [
+      {
+        "id": 13,
+        "hex": "0001"
+      },
+      {
+        "id": 14,
+        "hex": "610062"
+      }
+    ]
+  },
+  "expected_decoded": null,
+  "expected_error": 5,
+  "binary_hex": "45584f4200010003000000000000000d0000000000000000000d00020001000e0003610062"
+}

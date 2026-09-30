@@ -1,0 +1,111 @@
+name: Exim Observer Protocol
+status: experimental
+major: 0
+minor: 1
+magic: EXOB
+header_size: 24
+max_payload: 65536
+max_fields: 32
+fields:
+  - id: 1
+    name: MIN_VERSION
+    kind: version
+    max_length: 2
+  - id: 2
+    name: MAX_VERSION
+    kind: version
+    max_length: 2
+  - id: 3
+    name: SELECTED_VERSION
+    kind: version
+    max_length: 2
+  - id: 4
+    name: CAPABILITIES
+    kind: uint64
+    max_length: 8
+  - id: 5
+    name: REQUEST_ID
+    kind: nonzero64
+    max_length: 8
+  - id: 6
+    name: SERVER_ID
+    kind: identifier
+    max_length: 64
+  - id: 7
+    name: TRACKING_ID
+    kind: identifier
+    max_length: 128
+  - id: 8
+    name: EXIM_ID
+    kind: identifier
+    max_length: 64
+  - id: 9
+    name: RECIPIENT_ID
+    kind: identifier
+    max_length: 128
+  - id: 10
+    name: EVENT_ID
+    kind: identifier
+    max_length: 128
+  - id: 11
+    name: TIMESTAMP
+    kind: uint64
+    max_length: 8
+  - id: 12
+    name: QUEUE_COUNT
+    kind: uint64
+    max_length: 8
+  - id: 13
+    name: ERROR_CODE
+    kind: error
+    max_length: 2
+  - id: 14
+    name: ERROR_TEXT
+    kind: text
+    max_length: 1024
+  - id: 15
+    name: SENDER
+    kind: text
+    max_length: 320
+messages:
+  - id: 1
+    name: HELLO
+    required:
+      - 1
+      - 2
+      - 4
+    optional: []
+  - id: 2
+    name: HELLO_ACK
+    required:
+      - 3
+      - 4
+    optional: []
+  - id: 3
+    name: ERROR
+    required:
+      - 13
+    optional:
+      - 5
+      - 14
+  - id: 258
+    name: MESSAGE_ACCEPTED
+    required:
+      - 6
+      - 8
+      - 10
+      - 11
+    optional:
+      - 7
+      - 15
+  - id: 514
+    name: QUEUE_COUNT
+    required:
+      - 5
+    optional: []
+  - id: 1026
+    name: QUEUE_COUNT_RESPONSE
+    required:
+      - 5
+      - 12
+    optional: []
