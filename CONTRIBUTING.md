@@ -30,6 +30,7 @@ Node and npm using your operating system package manager. Then explicitly run:
 ```sh
 ./scripts/setup-dev.sh
 make tools-check
+make tools-go
 ```
 
 This opt-in script uses the network to install pinned formatters
@@ -107,3 +108,28 @@ and branch protection when configuring the GitHub repository.
 Go development requires Go 1.23 or newer. Run `make test-go lint-go fuzz-go`;
 `make check` includes Go race tests, vet, formatting and shared golden vectors.
 All wire changes must update both codecs and shared fixtures together.
+
+## Go analysis (adapted from fsledger)
+
+Install explicitly with `make tools-go` (network access). Versions are pinned in
+`scripts/go-analysis.mk`: golangci-lint v2.13.2, govulncheck v1.7.0 and NilAway
+v0.0.0-20260802165852-32ec3a0e8a41, matching fsledger. Local analysis was verified
+with Go 1.27.1; development tools may require a newer Go than the runtime module.
+Binaries live in ignored `.tools/bin`; ordinary builds never install tools.
+
+- `make lint-go`: verify versions/configuration and run golangci-lint, including
+  govet, Staticcheck, errcheck, gosec, dependency restrictions and correctness checks.
+- `make nilaway`: check potential nil dereferences, including normal test files.
+- `make fmt`: apply gofumpt, goimports and golines (120-column limit) to Go.
+- `make check`: offline analysis plus formatting and tests.
+- `make vuln`: explicit online vulnerability audit including tests; also runs in CI.
+  It is separate from offline checks and does not suppress findings or network failures.
+
+The configuration reuses fsledger's tool versions, strict error checks, generated
+file handling and formatters. It deliberately selects correctness/security linters
+instead of its all-linter style policy. The import allowlist matches this repository;
+fsledger's application dependencies and DTO exceptions are not copied. Govet's
+fieldalignment suggestion is disabled to preserve deliberate API field ordering.
+Narrow inline suppressions require a named linter and a reason: bounded conversions,
+repository-only fixture paths, private directory permissions and best-effort cleanup
+are documented at their call sites. Generated registries retain generator formatting.

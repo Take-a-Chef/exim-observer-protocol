@@ -34,6 +34,7 @@ func (s semantic) frame(t *testing.T) Frame {
 	}
 	return f
 }
+
 func TestSharedVectors(t *testing.T) {
 	paths, err := filepath.Glob("../testdata/*/*.bin")
 	if err != nil || len(paths) == 0 {
@@ -54,7 +55,7 @@ func TestSharedVectors(t *testing.T) {
 			if err = json.Unmarshal(meta, &v); err != nil {
 				t.Fatal(err)
 			}
-			wire, err := os.ReadFile(path)
+			wire, err := os.ReadFile(path) //nolint:gosec // Paths come only from the repository fixture glob.
 			if err != nil {
 				t.Fatal(err)
 			}
@@ -87,6 +88,7 @@ func TestSharedVectors(t *testing.T) {
 		})
 	}
 }
+
 func TestNegotiation(t *testing.T) {
 	var cases []struct {
 		Name     string
@@ -108,12 +110,14 @@ func TestNegotiation(t *testing.T) {
 		t.Run(c.Name, func(t *testing.T) {
 			r := func(x [4]uint8) Range { return Range{Version{x[0], x[1]}, Version{x[2], x[3]}} }
 			v, caps, err := Negotiate(r(c.A), r(c.B), c.ACaps, c.BCaps)
-			if v != (Version{c.Selected[0], c.Selected[1]}) || caps != c.Caps || (c.Error == 0 && err != nil) || (c.Error != 0 && !errors.Is(err, c.Error)) {
+			if v != (Version{c.Selected[0], c.Selected[1]}) || caps != c.Caps || (c.Error == 0 && err != nil) ||
+				(c.Error != 0 && !errors.Is(err, c.Error)) {
 				t.Fatalf("%+v %d %v", v, caps, err)
 			}
 		})
 	}
 }
+
 func TestEncodeBounds(t *testing.T) {
 	raw, err := os.ReadFile("../testdata/valid/draft01-hello.bin")
 	if err != nil {
@@ -133,13 +137,14 @@ func TestEncodeBounds(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
 func FuzzDecode(f *testing.F) {
 	paths, err := filepath.Glob("../testdata/*/*.bin")
 	if err != nil || len(paths) == 0 {
 		f.Fatal("missing seeds", err)
 	}
 	for _, p := range paths {
-		raw, err := os.ReadFile(p)
+		raw, err := os.ReadFile(p) //nolint:gosec // Paths come only from the repository fixture glob.
 		if err != nil {
 			f.Fatal(err)
 		}

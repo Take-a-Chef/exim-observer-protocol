@@ -6,8 +6,10 @@ import (
 	"unicode/utf8"
 )
 
-type fieldRule struct{ max, kind int }
-type messageRule struct{ required, allowed uint32 }
+type (
+	fieldRule   struct{ max, kind int }
+	messageRule struct{ required, allowed uint32 }
+)
 
 func validRange(r Range) bool { return r.Min.Major == r.Max.Major && r.Min.Minor <= r.Max.Minor }
 func validField(v []byte, r fieldRule) bool {
@@ -24,7 +26,7 @@ func validField(v []byte, r fieldRule) bool {
 			return false
 		}
 		for _, c := range v {
-			if !(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9' || bytes.IndexByte([]byte("._:@+-"), c) >= 0) {
+			if !(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9' || bytes.IndexByte([]byte("._:@+-"), c) >= 0) { //nolint:staticcheck // Positive allowed-character groups mirror the C validator.
 				return false
 			}
 		}
@@ -32,7 +34,8 @@ func validField(v []byte, r fieldRule) bool {
 	case 4:
 		return utf8.Valid(v) && bytes.IndexByte(v, 0) < 0
 	case 5:
-		return len(v) == 2 && binary.BigEndian.Uint16(v) > uint16(ErrorOK) && binary.BigEndian.Uint16(v) <= uint16(ErrorTemporaryError)
+		return len(v) == 2 && binary.BigEndian.Uint16(v) > uint16(ErrorOK) &&
+			binary.BigEndian.Uint16(v) <= uint16(ErrorTemporaryError)
 	}
 	return false
 }
@@ -82,7 +85,7 @@ func Validate(f Frame) error {
 	}
 	if f.Type == MsgHello {
 		a, b := f.Find(FieldMinVersion), f.Find(FieldMaxVersion)
-		if !validRange(Range{Version{a[0], a[1]}, Version{b[0], b[1]}}) {
+		if len(a) != 2 || len(b) != 2 || !validRange(Range{Version{a[0], a[1]}, Version{b[0], b[1]}}) {
 			return ErrorInvalidRequest
 		}
 	}

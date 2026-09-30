@@ -38,9 +38,9 @@ lint-c: build/vectors.inc
 	clang-tidy $(C_SOURCES) c/tests/test_codec.c c/tests/test_validation.c c/tests/test_vectors.c fuzz/c/decode.c -- $(CPPFLAGS) -std=c11
 	cppcheck --enable=warning,style,performance,portability --error-exitcode=1 --inline-suppr --std=c11 --suppress=missingIncludeSystem $(CPPFLAGS) $(C_SOURCES) c/tests/test_codec.c c/tests/test_validation.c c/tests/test_vectors.c fuzz/c/decode.c
 lint-docs:
-	yamllint -c .yamllint.yml spec .github .clang-format .clang-tidy .markdownlint.yaml .yamllint.yml
+	yamllint -c .yamllint.yml spec .github .clang-format .clang-tidy .markdownlint.yaml .yamllint.yml .golangci.yml
 	./node_modules/.bin/markdownlint-cli2 '**/*.md' '!node_modules/**' '!.tools/**'
-lint: lint-c lint-docs
+lint: lint-c lint-docs nilaway
 check: fmt-check validate-spec check-generated lint test test-vectors test-compat
 test-sanitize: CC = clang
 test-sanitize: build/vectors.inc | build
@@ -65,7 +65,8 @@ test-vectors: test-go
 test-go:
 	go test -race ./go
 lint: lint-go
-lint-go:
-	go vet ./go
 fuzz-go:
 	go test ./go -run='^$$' -fuzz=FuzzDecode -fuzztime=10s -parallel=2
+
+GO_PACKAGES := ./go
+include scripts/go-analysis.mk

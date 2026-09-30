@@ -6,6 +6,9 @@ Repository releases use Semantic Versioning; wire compatibility is tracked separ
 
 ### Added
 
+- Pinned Go analysis tools and CI checks adapted from fsledger: golangci-lint,
+  NilAway, govulncheck and Go formatters; security/correctness rules include tests.
+
 - Standard-library Go codec, generated registries, shared golden/negative vectors,
   negotiation tests and native fuzzing; wire draft remains unchanged.
 
