@@ -32,7 +32,7 @@ HTTP, WebUI, or Prometheus implementation.
 - [Shared fixtures](testdata/README.md) and [decisions](docs/adr/README.md)
 - [Development setup](CONTRIBUTING.md)
 
-With a C11 compiler, Go 1.23 or newer and Python 3 installed, normal tests are local and need no network:
+With a C11 compiler, Go 1.27.x and Python 3 installed, normal tests are local and need no network:
 
 ```sh
 make test

@@ -7,7 +7,7 @@ HTTP, persistence, metrics, and UI out of this repository.
 ## Development environment
 
 Linux amd64 is the initial CI target. The wire contract is architecture independent.
-The C protocol codec targets C11 with GCC or Clang. The Go codec uses Go 1.23+
+The C protocol codec targets C11 with GCC or Clang. The Go codec uses Go 1.27.x
 and the standard library; it does not contain agent logic.
 Observer implementations in other languages belong in separate repositories.
 
@@ -105,7 +105,7 @@ claim protocol stability automatically. Stabilization and public release notes
 require an explicit maintainer decision. Enable private vulnerability reporting
 and branch protection when configuring the GitHub repository.
 
-Go development requires Go 1.23 or newer. Run `make test-go lint-go fuzz-go`;
+Go development requires Go 1.27.x. Run `make test-go lint-go fuzz-go`;
 `make check` includes Go race tests, vet, formatting and shared golden vectors.
 All wire changes must update both codecs and shared fixtures together.
 
@@ -114,7 +114,7 @@ All wire changes must update both codecs and shared fixtures together.
 Install explicitly with `make tools-go` (network access). Versions are pinned in
 `scripts/go-analysis.mk`: golangci-lint v2.13.2, govulncheck v1.7.0 and NilAway
 v0.0.0-20260802165852-32ec3a0e8a41, matching fsledger. Local analysis was verified
-with Go 1.27.1; development tools may require a newer Go than the runtime module.
+with Go 1.27.1. Modules require Go 1.27.0 and CI selects the 1.27.x series.
 Binaries live in ignored `.tools/bin`; ordinary builds never install tools.
 
 - `make lint-go`: verify versions/configuration and run golangci-lint, including
@@ -133,3 +133,20 @@ fieldalignment suggestion is disabled to preserve deliberate API field ordering.
 Narrow inline suppressions require a named linter and a reason: bounded conversions,
 repository-only fixture paths, private directory permissions and best-effort cleanup
 are documented at their call sites. Generated registries retain generator formatting.
+
+## Go 1.27 workflow
+
+The go.mod minimum is 1.27.0; the agent workspace uses the same minimum. CI
+selects Go 1.27.x, allowing patch upgrades within that series. Locally the normal
+commands default to GOTOOLCHAIN=local so an old compiler fails explicitly rather
+than downloading another toolchain during an offline build.
+
+`make fix-go` runs the installed Go modernizers and then the pinned formatters.
+`make fix-go-check` runs `go fix -diff` without changing files; it is included in
+`make check`. The agent also checks integration-tagged test code. Inspect available
+modernizers with `go tool fix help`. The revamped command was introduced in
+[Go 1.26](https://go.dev/doc/go1.26#tools) and is available in the installed 1.27.x
+toolchain; these are not all features first introduced in 1.27.
+
+Tool installation stays separate from the runtime module: `make tools-go` installs
+pinned development binaries, preserving dependency-free protocol/runtime packages.

@@ -19,6 +19,9 @@ Repository releases use Semantic Versioning; wire compatibility is tracked separ
 
 ### Changed
 
+- Require Go 1.27.0 and test the 1.27.x series; add explicit modernization and
+  read-only `go fix -diff` checks without changing the wire protocol.
+
 - Scoped the implementation, tooling, and CI exclusively to C. Observer code belongs in a separate project.
 
 ### Deprecated

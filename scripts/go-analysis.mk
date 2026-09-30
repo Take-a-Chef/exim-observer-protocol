@@ -1,3 +1,7 @@
+# Use the installed toolchain; normal checks must not silently download Go.
+GOTOOLCHAIN ?= local
+export GOTOOLCHAIN
+GO_FIX_FLAGS ?=
 # Analysis tool versions copied from fsledger. Installation is explicit/networked.
 GO_PACKAGES ?= ./...
 GO_MODULE ?= github.com/inode64/exim-observer-protocol
@@ -29,3 +33,13 @@ fmt-go:
 
 .PHONY: tools
 tools: tools-go
+
+.PHONY: fix-go fix-go-check
+# Explicit modernization; formatter changes are intentional in this target.
+fix-go:
+	GOPROXY=off GOSUMDB=off go fix $(GO_FIX_FLAGS) $(GO_PACKAGES)
+	$(MAKE) fmt-go
+# Read-only check: go fix -diff fails when a modernizer suggests changes.
+fix-go-check:
+	GOPROXY=off GOSUMDB=off go fix -diff $(GO_FIX_FLAGS) $(GO_PACKAGES)
+check: fix-go-check
