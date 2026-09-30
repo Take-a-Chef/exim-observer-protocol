@@ -16,6 +16,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.x"
+          cache: false
       - uses: ./.github/actions/setup-dev
       - run: make tools-check check
       - run: git diff --exit-code
@@ -45,3 +49,13 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - run: sudo apt-get update && sudo apt-get install -y clang-18 libclang-rt-18-dev
       - run: make fuzz-smoke FUZZ_CC=clang-18
+  go:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.x"
+          cache: false
+      - run: make test-go lint-go fuzz-go

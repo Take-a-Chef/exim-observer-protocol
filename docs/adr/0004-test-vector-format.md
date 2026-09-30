@@ -16,4 +16,5 @@ Adding a C JSON/YAML parser to production is unnecessary. Binary-only fixtures c
 
 ## Consequences
 
-Python development tooling checks pairs and builds C test initializers. Future consumers implement their own fixture readers in their repositories. Fixture updates are explicit via tools/create-vectors.py, never part of normal generation. Stable released fixtures remain immutable.
+Python development tooling checks pairs and builds C test initializers. The Go codec reads the same JSON/binary pairs directly with the standard library.
+Both codecs must match semantic fields, exact bytes and error codes. Fixture updates are explicit via tools/create-vectors.py, never part of normal generation. Stable released fixtures remain immutable.

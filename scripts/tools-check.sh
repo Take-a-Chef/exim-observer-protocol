@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-for tool in gcc clang clang-format clang-tidy cppcheck yamllint python3 node npm; do
+for tool in gcc clang clang-format clang-tidy cppcheck yamllint python3 node npm go; do
   command -v "$tool"
 done
 clang-format --version | grep 'version 18\.1\.8'

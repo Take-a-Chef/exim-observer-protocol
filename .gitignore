@@ -62,3 +62,7 @@ dkms.conf
 /.gitconfig-tac
 __pycache__/
 /graphify-out/
+
+# Go module manifests are source files, not kernel module artifacts.
+!/go.mod
+!/go.sum

@@ -58,3 +58,14 @@ tools-check:
 	./scripts/tools-check.sh
 clean:
 	rm -rf build
+
+.PHONY: test-go lint-go fuzz-go
+test: test-go
+test-vectors: test-go
+test-go:
+	go test -race ./go
+lint: lint-go
+lint-go:
+	go vet ./go
+fuzz-go:
+	go test ./go -run='^$$' -fuzz=FuzzDecode -fuzztime=10s -parallel=2

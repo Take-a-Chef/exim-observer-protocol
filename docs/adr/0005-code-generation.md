@@ -17,3 +17,6 @@ Manual duplication is simple initially but risks interoperability; generating en
 ## Consequences
 
 Codec parsing remains hand-written. make check-generated compares regenerated temporary files without editing the tree, including untracked files. No runtime dependencies are added. Python, PyYAML, clang-format, and pinned Prettier are explicit developer dependencies.
+
+The Go registry and validation tables are generated from the same YAML into
+`go/registry.go`. This adds no wire IDs or changes to existing C output.

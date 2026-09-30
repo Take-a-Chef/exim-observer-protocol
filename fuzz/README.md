@@ -10,3 +10,7 @@ and field validation. Successful decode must validate and re-encode to exactly t
 same bytes within the size cap. Failed decode must not crash, overrun, hang, leak,
 or return a usable partial object. Minimize crash artifacts and convert them into
 named testdata vectors for regression coverage. Never commit private traffic.
+
+The Go decoder fuzz target lives in `go/codec_test.go` to share the Go package
+and the canonical C/Go corpus. Run `make fuzz-go`; successful decodes must
+re-encode byte for byte, including unknown optional fields.

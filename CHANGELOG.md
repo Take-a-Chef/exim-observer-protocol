@@ -6,6 +6,9 @@ Repository releases use Semantic Versioning; wire compatibility is tracked separ
 
 ### Added
 
+- Standard-library Go codec, generated registries, shared golden/negative vectors,
+  negotiation tests and native fuzzing; wire draft remains unchanged.
+
 - Experimental wire draft 0.1 with explicit framing, negotiation, one event and one control operation.
 - Portable C11 codec with bounded validation.
 - Shared golden, malformed, compatibility, round-trip, and fuzz tests.

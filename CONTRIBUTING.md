@@ -7,7 +7,8 @@ HTTP, persistence, metrics, and UI out of this repository.
 ## Development environment
 
 Linux amd64 is the initial CI target. The wire contract is architecture independent.
-The protocol implementation is exclusively C11, built with GCC or Clang.
+The C protocol codec targets C11 with GCC or Clang. The Go codec uses Go 1.23+
+and the standard library; it does not contain agent logic.
 Observer implementations in other languages belong in separate repositories.
 
 Required tools:
@@ -102,3 +103,7 @@ SHA-256 checksum for maintainer review. It does not publish a GitHub release or
 claim protocol stability automatically. Stabilization and public release notes
 require an explicit maintainer decision. Enable private vulnerability reporting
 and branch protection when configuring the GitHub repository.
+
+Go development requires Go 1.23 or newer. Run `make test-go lint-go fuzz-go`;
+`make check` includes Go race tests, vet, formatting and shared golden vectors.
+All wire changes must update both codecs and shared fixtures together.

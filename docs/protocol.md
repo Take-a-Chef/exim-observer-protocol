@@ -90,6 +90,10 @@ C: `exob_encode`, `exob_decode`, `exob_validate`, `exob_negotiate`.
 Functions return numeric registry error codes. Decode failure leaves no usable
 partial frame. See the public header for buffer ownership and output rules.
 
+Go: `protocol.Encode`, `protocol.Decode`, `protocol.Validate`, `protocol.Negotiate`
+from `github.com/inode64/exim-observer-protocol/go`. Failures use typed `Code`
+errors. Decode borrows field values from the input; Encode returns owned bytes.
+
 Codec validation is stateless. Applications must additionally check handshake
 state, the selected header version, capability gates, request correlation,
 durable event identity, peer identity and authorization. No helper here opens a
