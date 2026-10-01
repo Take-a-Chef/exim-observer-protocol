@@ -4,7 +4,7 @@ export GOTOOLCHAIN
 GO_FIX_FLAGS ?=
 # Analysis tool versions copied from fsledger. Installation is explicit/networked.
 GO_PACKAGES ?= ./...
-GO_MODULE ?= github.com/inode64/exim-observer-protocol
+GO_MODULE ?= github.com/Take-a-Chef/exim-observer-protocol
 GO_TOOLS_DIR := $(CURDIR)/.tools/bin
 GOLANGCI_VERSION := v2.13.2
 GOVULNCHECK_VERSION := v1.7.0

@@ -10,7 +10,7 @@ Maintainers may remove inappropriate content, warn participants, restrict
 participation, or ban repeated or serious offenders. They should explain actions
 privately where possible and apply the policy consistently, including to maintainers.
 
-Report concerns privately through an inode64 maintainer's GitHub profile contact
+Report concerns privately through a project maintainer's GitHub profile contact
 information. If the concern involves that maintainer, contact another uninvolved
 maintainer. Reports should be handled confidentially as far as practical; do not
 publish personal information or retaliation. Appeals can be sent to an uninvolved

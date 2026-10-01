@@ -9,8 +9,8 @@ access, unbounded resource use, and cross-language validation discrepancies are
 security-sensitive even when transport is a local Unix socket.
 
 Use GitHub's private vulnerability reporting for this repository when it is enabled:
-<https://github.com/inode64/exim-observer-protocol/security/advisories/new>.
-If unavailable, contact an inode64 maintainer through the contact information on
+<https://github.com/Take-a-Chef/exim-observer-protocol/security/advisories/new>.
+If unavailable, contact a project maintainer through the contact information on
 their GitHub profile and request a private channel. Do not publish exploit details
 in a public issue. This skeleton does not establish a response-time commitment.
 

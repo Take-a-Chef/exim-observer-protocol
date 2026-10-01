@@ -19,6 +19,9 @@ Repository releases use Semantic Versioning; wire compatibility is tracked separ
 
 ### Changed
 
+- Move the Go module, repository links and analysis configuration to Take-a-Chef;
+  wire bytes and codec APIs are unchanged.
+
 - Require Go 1.27.0 and test the 1.27.x series; add explicit modernization and
   read-only `go fix -diff` checks without changing the wire protocol.
 

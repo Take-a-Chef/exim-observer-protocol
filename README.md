@@ -60,7 +60,7 @@ C consumers include `include/exim_observer_protocol.h` (and its generated regist
 header) and compile `c/src/codec.c` and `c/src/validation.c` with `-Iinclude -Ic/include`.
 The API allocates no memory; decoded values borrow caller-owned input buffers.
 
-Go consumers import `github.com/inode64/exim-observer-protocol/go` (package
+Go consumers import `github.com/Take-a-Chef/exim-observer-protocol/go` (package
 `protocol`). `Encode`, `Decode`, `Validate` and `Negotiate` use only the standard
 library. Decode borrows input bytes; Encode returns an owned buffer. C and Go
 consume the exact same JSON/binary fixtures, including malformed inputs.
@@ -73,8 +73,8 @@ for both implementations and future consumers. These decisions are recorded in t
 
 ## Related projects
 
-- [exim-observer-plugin](https://github.com/inode64/exim-observer-plugin)
-- [exim-observer-agent](https://github.com/inode64/exim-observer-agent)
-- [exim-observer](https://github.com/inode64/exim-observer)
+- [exim-observer-plugin](https://github.com/Take-a-Chef/exim-observer-plugin)
+- [exim-observer-agent](https://github.com/Take-a-Chef/exim-observer-agent)
+- [exim-observer](https://github.com/Take-a-Chef/exim-observer)
 
 Licensed under [Apache-2.0](LICENSE).
